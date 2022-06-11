@@ -27,27 +27,28 @@ function Get-Document {
     param (
         [Parameter(Mandatory=$true,Position=0,HelpMessage='Enter the collection to query.')]
         [string]$Collection,
-        [Parameter(Mandatory=$false,Position=1,HelpMessage='Enter the collection Key to query.')]
+        [Parameter(Mandatory=$true,Position=1,ParameterSetName='singleDocument',HelpMessage='Enter the collection Key to query.')]
         [string]$Key,
-        [Parameter(Mandatory=$false,Position=2,HelpMessage='Switch to list all documents from the collection.')]
+        [Parameter(Mandatory=$false,Position=2,ParameterSetName='multiDocument',HelpMessage='Switch to list all documents from the collection.')]
         [switch]$All
     )
     if(!(Test-Environment)) {
         $_
     }
-    if($All) {
+    if ($PSCmdlet.ParameterSetName -eq 'singleDocument') {
         try {
-            $query =  @{query="FOR x IN $Collection RETURN x";} | ConvertTo-Json
-            (Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $query).result
+            Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/document/"$Collection"/"$Key -Headers $Global:ArangoDBHeader 
         }
         catch {
             Write-Host "There was an error in your web request!" -ForegroundColor red
             Write-Host "Exception Message: $($_.Exception.Message)" -ForegroundColor Red
             break
         }
-    } else {
+    }
+    if($All -and $PSCmdlet.ParameterSetName -eq 'multiDocument') {
         try {
-            Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/document/"$Collection"/"$Key -Headers $Global:ArangoDBHeader 
+            $query =  @{query="FOR x IN $Collection RETURN x";} | ConvertTo-Json
+            (Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $query).result
         }
         catch {
             Write-Host "There was an error in your web request!" -ForegroundColor red
