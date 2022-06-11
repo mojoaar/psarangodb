@@ -17,7 +17,7 @@ function Get-Document {
     .PARAMETER All
         Switch to query all entries in ArangoDB collection
     .EXAMPLE
-        Get-Document -Collection 'test_collection' -ID '1234'
+        Get-Document -Collection 'test_collection' -Key '1234'
         Get document with id 1234 from the collection test_collection
     .EXAMPLE
         Get-Document -Collection 'test_collection' -All
