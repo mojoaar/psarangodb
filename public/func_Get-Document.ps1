@@ -10,6 +10,12 @@ function Get-Document {
         Version: 0.0.1
         DateCreated: 2022-June-11
         DateUpdated: XXXX-XXX-XX
+    .PARAMETER Collection
+        Collection to query in ArangoDB
+    .PARAMETER Key
+        Key to query in ArangoDB
+    .PARAMETER All
+        Switch to query all entries in ArangoDB collection
     .EXAMPLE
         Get-Document -Collection 'test_collection' -ID '1234'
         Get document with id 1234 from the collection test_collection
@@ -21,8 +27,8 @@ function Get-Document {
     param (
         [Parameter(Mandatory=$true,Position=0,HelpMessage='Enter the collection to query.')]
         [string]$Collection,
-        [Parameter(Mandatory=$false,Position=1,HelpMessage='Enter the collection id to query.')]
-        [string]$ID,
+        [Parameter(Mandatory=$false,Position=1,HelpMessage='Enter the collection Key to query.')]
+        [string]$Key,
         [Parameter(Mandatory=$false,Position=2,HelpMessage='Switch to list all documents from the collection.')]
         [switch]$All
     )
@@ -41,7 +47,7 @@ function Get-Document {
         }
     } else {
         try {
-            Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/document/"$Collection"/"$ID -Headers $Global:ArangoDBHeader 
+            Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/document/"$Collection"/"$Key -Headers $Global:ArangoDBHeader 
         }
         catch {
             Write-Host "There was an error in your web request!" -ForegroundColor red
