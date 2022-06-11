@@ -42,6 +42,7 @@ function Set-Environment {
         Set-Variable -Name ArangoDBToken -Scope Global -Value $jwt
         Set-Variable -Name ArangoDBHeader -Scope Global -Value $headers
         Set-Variable -Name ArangoDBURL -Scope Global -Value $Url
+        Set-Variable -Name ArangoDBPort -Scope Global -Value $Port
     }
     catch {
         Write-Host "Failed to set the token/global variables!" -ForegroundColor red

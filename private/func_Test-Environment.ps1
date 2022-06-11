@@ -14,7 +14,7 @@ function Test-Environment {
         Test-Environment
         Will test if the ArangoDB API environment is set
     #>
-    if (!$Global:ArangoDBToken -or !$Global:ArangoDBHeader -or !$Global:ArangoDBURL) {
+    if (!$Global:ArangoDBToken -or !$Global:ArangoDBHeader -or !$Global:ArangoDBURL -or !$Global:ArangoDBPort) {
         Write-Host "Authentication, API Headers, or API base URL for ArangoDB API are not set (one or more), please use Set-Environment before running this function" -ForegroundColor Red
         break
     } else {
