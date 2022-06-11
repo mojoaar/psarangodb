@@ -25,7 +25,7 @@ function Set-Database {
         $_
     }
     try {
-        Set-Variable -Name ArangoDBDatabase -Scope Global -Value $Url
+        Set-Variable -Name ArangoDBDatabase -Scope Global -Value $Name
     }
     catch {
         Write-Host "Failed to set the global variables!" -ForegroundColor red
