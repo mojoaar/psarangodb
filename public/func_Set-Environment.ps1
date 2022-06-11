@@ -45,7 +45,7 @@ function Set-Environment {
         Set-Variable -Name ArangoDBPort -Scope Global -Value $Port
     }
     catch {
-        Write-Host "Failed to set the token/global variables!" -ForegroundColor red
+        Write-Host "Failed to set the global variables!" -ForegroundColor red
         Write-Host "Exception Message: $($_.Exception.Message)" -ForegroundColor Red
         break
     }
