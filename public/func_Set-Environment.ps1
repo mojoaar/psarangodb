@@ -18,6 +18,8 @@ function Set-Environment {
         Username for accessing ArangoDB
     .PARAMETER Pass
         Password for accessing ArangoDB
+    .PARAMETER Name
+        Name of the database to work against
     .EXAMPLE
         Set-Environment -Url 'https://arangodb.domain.com' -Port '8529' -User 'sa_someuser' -Pass 'secret_password' -Database 'test_DB'
         Will set all global variables for the ArangoDB environment
