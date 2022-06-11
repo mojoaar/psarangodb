@@ -48,6 +48,7 @@ function Set-Environment {
         Set-Variable -Name ArangoDBURL -Scope Global -Value $Url
         Set-Variable -Name ArangoDBPort -Scope Global -Value $Port
         Set-Variable -Name ArangoDBDatabase -Scope Global -Value $Database
+        Set-Variable -Name ArangoDBAPIUrl -Scope Global -Value $Url":"$Port"/_db/"$Database"/_api/"
     }
     catch {
         Write-Host "Failed to set the global variables!" -ForegroundColor red
