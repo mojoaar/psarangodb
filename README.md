@@ -10,7 +10,7 @@ todo
 
 ## Functions
 
-* Test-Environment
+* Set-Environment
 * todo
 
 ## Changelog
