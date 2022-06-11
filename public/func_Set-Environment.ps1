@@ -34,7 +34,7 @@ function Set-Environment {
         [string]$User,
         [Parameter(Mandatory=$true,Position=3,HelpMessage='Enter password of ArangoDB.')]
         [string]$Pass,
-        [Parameter(Mandatory=$false,Position=4,HelpMessage='Enter name of the database to work against.')]
+        [Parameter(Mandatory=$true,Position=4,HelpMessage='Enter name of the database to work against.')]
         [string]$Database
     )
     try {
@@ -47,9 +47,7 @@ function Set-Environment {
         Set-Variable -Name ArangoDBHeader -Scope Global -Value $headers
         Set-Variable -Name ArangoDBURL -Scope Global -Value $Url
         Set-Variable -Name ArangoDBPort -Scope Global -Value $Port
-        if($Database) {
-            Set-Variable -Name ArangoDBDatabase -Scope Global -Value $Database
-        }
+        Set-Variable -Name ArangoDBDatabase -Scope Global -Value $Database
     }
     catch {
         Write-Host "Failed to set the global variables!" -ForegroundColor red
