@@ -24,6 +24,9 @@ function New-AQLQuery {
     .EXAMPLE
         New-AQLQuery -Query 'INSERT { display_name: "Katie Foster", title: "Student", email: "kf@domain.com" } INTO some_collection RETURN NEW'
         Create a new document in the collection some_collection and return the newly created document
+    .EXAMPLE
+        New-AQLQuery -Query 'UPDATE "77420" WITH { display_name: "Luke Skywalker" } IN some_collection RETURN NEW'
+        Update document 77420 in some_collection and return the updated document
     #>
     [CmdletBinding()]
     param (
