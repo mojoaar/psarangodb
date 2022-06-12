@@ -17,7 +17,9 @@ Requires PowerShell 5.1 or above.
 
 ## Usage
 
-todo
+Download or clone the latest files and place the module folder in your PowerShell profile directory (i.e. the `Modules` directory under wherever `$profile` points to in your PS console) and run:
+`Import-Module PSArangoDB`
+Once you've done this, all the cmdlets will be at your disposal, you can see a full list using `Get-Command -Module PSArangoDB`. Remember to run Set-Environment before beginning to work with ArangoDB.
 
 ## Functions
 
