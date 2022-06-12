@@ -95,7 +95,7 @@
         PSData = @{
     
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags = 'powershell','module','arangodb','api','database','rest'
+            Tags = 'powershell','module','arangodb','api','database','rest','aql','nosql'
     
             # A URL to the license for this module.
             # LicenseUri = ''
