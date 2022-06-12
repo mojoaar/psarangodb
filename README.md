@@ -1,6 +1,6 @@
 <p align="center">
-<a href="https://github.com/mojoaar/psdatagerry"><img src="https://img.shields.io/github/last-commit/mojoaar/psdatagerry"></a>
-<a href="https://github.com/mojoaar/psdatagerry"><img src="https://img.shields.io/github/contributors/mojoaar/psdatagerry"></a>
+<a href="https://github.com/mojoaar/psarangodb"><img src="https://img.shields.io/github/last-commit/mojoaar/psarangodb"></a>
+<a href="https://github.com/mojoaar/psarangodb"><img src="https://img.shields.io/github/contributors/mojoaar/psarangodb"></a>
 </p>
 <p align="center">
 <a href="https://technet.cc"><img src="https://img.shields.io/badge/technet.cc-Blog-blue"></a>
