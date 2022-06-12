@@ -30,7 +30,7 @@
     Copyright = '(c) Morten Johansen. All rights reserved.'
     
     # Description of the functionality provided by this module
-    Description = 'PowerShell module for ArangoDB API'
+    Description = 'PowerShell module for working with ArangoDB'
     
     # Minimum version of the PowerShell engine required by this module
     PowerShellVersion = '5.1'
