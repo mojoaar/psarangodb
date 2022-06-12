@@ -13,7 +13,7 @@ function New-Document {
     .PARAMETER Collection
         Collection to add the document to
     .PARAMETER Data
-        Json data to add
+        Data to add (as json)
     .EXAMPLE
         $json = @{display_name="John Doe";title="Director";email="john@doe.com";} | ConvertTo-Json
         New-Document -Collection 'test_collection' -Data $json
