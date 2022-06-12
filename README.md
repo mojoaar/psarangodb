@@ -9,7 +9,7 @@
 
 # PSArangoDB - PowerShell Module
 
-This module provides a series of functions to work with the ArangoDB API. Use Get-Help on the functions to get further details of usage.
+This module provides a series of functions to work with the [ArangoDB](https://www.arangodb.com) API. Use Get-Help on the functions to get further details of usage.
 
 ## Requirements
 
