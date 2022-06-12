@@ -27,7 +27,9 @@ Once you've done this, all the cmdlets will be at your disposal, you can see a f
 * Get-Document
 * New-AQLQuery
 * New-Document
+* Remove-Document
 * Set-Environment
+* Update-Document
 
 ## Changelog
 
