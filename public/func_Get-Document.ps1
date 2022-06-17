@@ -48,7 +48,18 @@ function Get-Document {
     if($All -and $PSCmdlet.ParameterSetName -eq 'multiDocument') {
         try {
             $query =  @{query="FOR x IN $Collection RETURN x";} | ConvertTo-Json
-            (Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $query).result
+            $query = Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $query
+            $results = [System.Collections.ArrayList]@()
+            $query.foreach({$results.add($_)}) | Out-Null
+            if($query.hasMore -eq $true) {
+                do {
+                    $query = Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor/$($query.id)" -Headers $Global:ArangoDBHeader -Method Post -Body $query
+                    $query.foreach({$results.add($_)}) | Out-Null
+                } until ($query.hasMore -eq $false)
+                return $results.result
+            } else {
+                return $results.result
+            }
         }
         catch {
             Write-Host "There was an error in your web request!" -ForegroundColor red
