@@ -37,5 +37,7 @@ Once you've done this, all the cmdlets will be at your disposal, you can see a f
 
 ## Changelog
 
+* 0.0.2 - 17-06-2022
+  * Added pagination support for Get-Document
 * 0.0.1 - 11-06-2022
   * Initial release of module
