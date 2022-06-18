@@ -9,7 +9,7 @@ function Get-Document {
         Author: Morten Johansen
         Version: 0.0.2
         DateCreated: 2022-June-11
-        DateUpdated: XXXX-XXX-XX
+        DateUpdated: 2022-June-17
     .PARAMETER Collection
         Collection to query in ArangoDB
     .PARAMETER Key
