@@ -7,7 +7,7 @@ function Get-Document {
     .NOTES
         Name: Get-Document
         Author: Morten Johansen
-        Version: 0.0.1
+        Version: 0.0.2
         DateCreated: 2022-June-11
         DateUpdated: XXXX-XXX-XX
     .PARAMETER Collection
