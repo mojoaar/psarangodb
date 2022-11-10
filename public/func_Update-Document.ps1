@@ -34,7 +34,7 @@ function Update-Document {
         $_
     }
     try {
-        Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"document/"$Collection"/"$Key -Headers $Global:ArangoDBHeader -Method Patch -Body $Data
+        Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"document/"$Collection"/"$Key -Headers $Global:ArangoDBHeader -Method Patch -Body $Data -ContentType 'application/json; charset=utf-8'
     }
     catch {
         Write-Host "There was an error in your web request!" -ForegroundColor red

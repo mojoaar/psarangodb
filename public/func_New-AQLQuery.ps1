@@ -38,7 +38,7 @@ function New-AQLQuery {
     }
     try {
         $body =  @{query=$Query;} | ConvertTo-Json
-        (Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $body).result
+        (Invoke-RestMethod -Uri $Global:ArangoDBAPIUrl"/cursor" -Headers $Global:ArangoDBHeader -Method Post -Body $body -ContentType 'application/json; charset=utf-8').result
     }
     catch {
         Write-Host "There was an error in your web request!" -ForegroundColor red
