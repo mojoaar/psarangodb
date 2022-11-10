@@ -41,7 +41,8 @@ function Set-Environment {
         $json = @{username="$($User)";password="$($Pass)";} | ConvertTo-Json
         $jwt = (Invoke-RestMethod $Url":"$Port/_open/auth -Body $json -Method Post).jwt
         $headers = @{
-            Authorization = "Bearer $jwt"
+            "Authorization" = "Bearer $jwt"
+            "Content-Type" = "application/json; charset=utf-8"
         }
         Set-Variable -Name ArangoDBToken -Scope Global -Value $jwt
         Set-Variable -Name ArangoDBHeader -Scope Global -Value $headers
