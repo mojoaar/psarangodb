@@ -9,7 +9,7 @@ function Set-Environment {
         Author: Morten Johansen
         Version: 0.0.1
         DateCreated: 2022-June-11
-        DateUpdated: XXXX-XXX-XX
+        DateUpdated: 2022-November-10
     .PARAMETER Url
         Url of ArangoDB
     .PARAMETER Port
